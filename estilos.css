@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;  
+    font-weight: 400;
+}
+
+html{
+    background: linear-gradient(#af67e9, #6565e7);
+    min-height: 100%;
+    margin-top: 100;
+    padding: 10%;
+    max-width: 100%;
+}
+
+body{
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq{
+    width: 65%;
+    min-height : 450px;
+    box-shadow: 0px 25px 50px rgba(0,0,0,0.3); /* https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+    background-color: #fff;
+    display: flex;  /* O flex box é usado para layouts de pequena escala ou componentes */
+    align-items: center;
+    border-radius: 30px;
+}
+
+.faq .ilustracao{
+    position: relative;
+    left: -120px;
+    width: 50%;
+    margin: 50px 0;
+}
+
+.faq .conteudo{
+    width: 40%;
+    padding-bottom: 20px; 
+}
+
+.faq .conteudo h1{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.faq .itens{
+    list-style-type: none;
+}
+
+.faq .itens .item {
+    cursor: pointer;
+    background-image: url(../imagens/icone-seta-pra-baixo.png);
+    background-repeat: no-repeat;
+    background-position: top 8px right 0;
+    background-size: 12px;
+    border-bottom: 1px solid #ccc;
+    margin: 10px;
+}
+
+.faq .itens .item:last-child {
+    border-bottom: none;
+}
+
+.faq .item .itens  .pergunta {
+    padding-bottom: 15px;
+    transition: 0.1s ease;
+    font-size: 18px;
+    width: 90%;
+}
+
+.item .pergunta:hover{
+    color: #f47c57;
+} 
+
+.item .resposta{
+    display: none;
+    padding-bottom: 15px;
+}
+
+/* Estilos do Item Ativo */
+.faq .itens .item.ativo h2 {
+    font-weight: 700;
+} 
+
+.faq .itens .item.ativo .resposta {
+    display: block; /* display: block subescreve o display: none, é o mesmo que dizer:"mostra a resposta agora" */
+}
+
+.faq .itens .item.ativo {
+    background-image: url(../imagens/icone-seta-pra-baixo.png);
+}
+
+@media(max-width: 1140px){
+    .faq{
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .faq .conteudo{
+        width: 100%;
+    }
+
+    .faq .conteudo h1{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .faq .itens{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .faq .itens .pergunta{
+        font-size: 16px;
+    }
+
+    .faq .ilustracao{
+        width: 40;
+        left: 0;
+        margin: 30px 0;
+    }
+}

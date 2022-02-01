@@ -1,10 +1,5 @@
-/* Variável = armazenar coisas Ex: const produto = Tênis */
-/* Funções = realizar ações Ex: function darOi(){alert ('oi')}*/
-/* Condicionais = realizam ações conforme uma condição Ex: if */
-
 /* Buscas os itens da tela   */
-const itensPerguntasERespostas = document.querySelectorAll('.item'); /* console.log(intensPerguntasRespostas)
- */
+const itensPerguntasERespostas = document.querySelectorAll('.item') 
 
 /* Add evento de click no elemento */
 itensPerguntasERespostas.forEach(function(item) {
@@ -12,21 +7,21 @@ itensPerguntasERespostas.forEach(function(item) {
 
         /* Verificar se a pergunda/item clicada não está ativa */
         const estaAtiva = item.classList.contains('ativo') 
-        
-        
-        if(!estaAtiva) {
-            /*  Abrir a resposta atual */
-            itensPerguntasERespostas.forEach(function(item) {
-                item.classList.remove('ativo')
-            } )
 
-            /*  Abrir a resposta atual */
-            item.classList.add('ativo')
-
-            /* se a pargunta clicada estiver ativa */
-        } else {
-            /* desativar - remover a class 'ativo' */    
+        /* Eu preciso Fechar Todas */
+        itensPerguntasERespostas.forEach(function(item) {
             item.classList.remove('ativo')
-        }    
+        })
+
+        // SE A PERGUNTA NÃO ESTA ATIVA 
+        if(!estaAtiva) {
+            // ABRIR A RESPOSTA ATUAL
+            item.classList.add('ativo')
+        
+        // SE A PERGUNTA ESTIVER ATIVA
+        } else {
+            // DESATIVAR (REMOVERIA A CLASSE ATIVO)
+            item.classList.remove('ativo')
+        }
     })
 })

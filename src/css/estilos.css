@@ -1,30 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 *{
     margin: 0;
     padding: 0;  
-    font-weight: 100%;
+    font-weight: 300%;
 }
 
-html{
+html {
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient() */
     background: linear-gradient(#af67e9, #6565e7);
-    min-height: 100%;
-    margin-top: 100;
-    padding: 10%;
-    max-width: 100%;
+
 }
 
-body{
+body {
     font-family: "Kumbh Sans", sans-serif;
 }
 
-main{
+main { 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.faq{
+.faq {
     width: 65%;
     min-height : 450px;
     box-shadow: 0px 25px 50px rgba(0,0,0,0.3); /* https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
@@ -34,25 +33,25 @@ main{
     border-radius: 30px;
 }
 
-.faq .ilustracao{
+.faq .ilustracao {
     position: relative;
     left: -120px;
     width: 50%;
     margin: 50px 0;
 }
 
-.faq .conteudo{
+.faq .conteudo {
     width: 40%;
     padding-bottom: 20px; 
 }
 
-.faq .conteudo h1{
+.faq .conteudo h1 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 30px;
 }
 
-.faq .itens{
+.faq .itens {
     list-style-type: none;
 }
 
@@ -63,30 +62,34 @@ main{
     background-position: top 8px right 0;
     background-size: 12px;
     border-bottom: 1px solid #ccc;
-    margin: 10px;
+    margin: 10px 0;
 }
 
+/* pseudo classes */
 .faq .itens .item:last-child {
     border-bottom: none;
 }
 
-.faq .item .itens  .pergunta {
+.faq .itens .item .pergunta {
     padding-bottom: 15px;
-    transition: 0.1s ease;
+    transition: 0.2s ease;
     font-size: 18px;
     width: 90%;
 }
 
-.item .pergunta:hover{
+.item .pergunta:hover {
     color: #f47c57;
 } 
 
-.item .resposta{
+.resposta {
     display: none;
     padding-bottom: 15px;
 }
 
-/* Estilos do Item Ativo */
+/* Estilos do Item de FAQ Ativo */
+.faq .itens .item h2 {
+    font-weight: 400;
+} 
 .faq .itens .item.ativo h2 {
     font-weight: 700;
 } 
@@ -96,36 +99,48 @@ main{
 }
 
 .faq .itens .item.ativo {
-    background-image: url(../imagens/icone-seta-pra-baixo.png);
+    background-image: url(../imagens/icone-seta-pra-cima.png);
 }
 
-@media(max-width: 1140px){
-    .faq{
+/* Responsivo */
+@media(max-width: 1140px) {
+    .faq {
         flex-direction: column;
         width: 90%;
     }
     
-    .faq .conteudo{
+    .faq .conteudo {
         width: 100%;
     }
 
-    .faq .conteudo h1{
+    .faq .conteudo h1 {
         font-size: 24px;
         text-align: center;
     }
 
-    .faq .itens{
+    .faq .itens {
         width: 80%;
-        margin: 0 auto;
+        margin: auto;
     }
 
-    .faq .itens .pergunta{
+    .faq .itens .item .pergunta {
         font-size: 16px;
     }
 
-    .faq .ilustracao{
+    .faq .ilustracao {
         width: 40;
         left: 0;
         margin: 30px 0;
     }
 }
+
+@media (max-width: 425px) {
+    .faq {
+      height: 540px;
+    }
+    
+    /* .faq .items {
+      overflow-y: hidden;
+      max-height: 100%;
+    }   */
+  }
